@@ -8,3 +8,6 @@ spring:
 
   liquibase:
     contexts: local
+
+guardian:
+  psskee: loc-guardian-kee
