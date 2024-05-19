@@ -12,3 +12,9 @@ spring:
 
   liquibase:
     change-log: classpath:liquibase/dbchangelog.xml
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+    tagsSorter: alpha
+    operationsSorter: method
