@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: guardian
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        ddl-auto: none
+        format_sql: true
+
+  liquibase:
+    change-log: classpath:liquibase/dbchangelog.xml
