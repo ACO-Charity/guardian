@@ -9,5 +9,13 @@ spring:
   liquibase:
     contexts: local
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 329776148970-h34k4pgmbb1i3sppcl4de7039kqr83ds.apps.googleusercontent.com
+            client-secret: SECRET #TODO Jasypt encrypt client secret
+
 guardian:
   psskee: loc-guardian-kee
