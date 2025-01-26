@@ -23,6 +23,13 @@ class PasswordApi(private val passwordService: PasswordService) {
         return ResponseEntity.ok(result)
     }
 
+    @PostMapping("update")
+    fun updatePassword(@RequestBody passwordDto: PasswordDto): ResponseEntity<PasswordDto> {
+        val result = this.passwordService.updatePassword(passwordDto)
+        return ResponseEntity.ok(result)
+    }
+
+
     @GetMapping("/{passwordId}")
     fun getById(@PathVariable passwordId: UUID): ResponseEntity<PasswordDto> {
         val result = this.passwordService.findById(passwordId)

@@ -20,6 +20,14 @@ class PasswordService(private val passwordRepository: PasswordRepository) {
         return saved.toDto()
     }
 
+    fun updatePassword(passwordDto: PasswordDto): PasswordDto {
+        val toUpdate = this.passwordRepository.findById(passwordDto.id!!).orElseThrow { RuntimeException("No Password found for ${passwordDto.id}")}
+        toUpdate.password = passwordDto.password
+        toUpdate.name = passwordDto.name
+        val saved = this.passwordRepository.save(toUpdate)
+        return saved.toDto()
+    }
+
     fun findById(passwordId: UUID): PasswordDto {
         val password = this.passwordRepository.findById(passwordId).orElseThrow { RuntimeException("No Password found for ${passwordId}")}
         return password.toDto()

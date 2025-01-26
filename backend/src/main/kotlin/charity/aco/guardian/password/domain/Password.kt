@@ -8,10 +8,10 @@ import jakarta.persistence.Entity
 
 @Entity
 data class Password(
-    val name: String,
+    var name: String,
 
     @Convert(converter = PasswordConverter::class)
-    val password: String
+    var password: String
 ) : BaseEntity() {
 
     fun toDto(): PasswordDto = PasswordDto(
